@@ -1,0 +1,19 @@
+2026-01-28 11:31:36,096 - app.main - INFO - startup_event:39 - Starting Employee Management System v1.0.0
+2026-01-28 11:36:31,768 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /health
+2026-01-28 11:36:31,776 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /health - Status: 200 - Time: 0.008s
+2026-01-28 11:36:31,863 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /favicon.ico
+2026-01-28 11:36:31,865 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /favicon.ico - Status: 404 - Time: 0.002s
+2026-01-28 11:36:37,107 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /api/v1
+2026-01-28 11:36:37,108 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /api/v1 - Status: 404 - Time: 0.001s
+2026-01-28 11:36:43,444 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /redoc
+2026-01-28 11:36:43,446 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /redoc - Status: 200 - Time: 0.002s
+2026-01-28 11:36:43,895 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /openapi.json
+2026-01-28 11:36:43,981 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /openapi.json - Status: 200 - Time: 0.087s
+2026-01-28 11:36:55,908 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /docs
+2026-01-28 11:36:55,909 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /docs - Status: 200 - Time: 0.002s
+2026-01-28 11:36:56,257 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /openapi.json
+2026-01-28 11:36:56,258 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET /openapi.json - Status: 200 - Time: 0.001s
+2026-01-28 11:37:08,136 - app.middleware.logging_middleware - INFO - logging_middleware:12 - Request: GET /
+2026-01-28 11:37:08,138 - app.middleware.logging_middleware - INFO - logging_middleware:19 - Response: GET / - Status: 200 - Time: 0.002s
+2026-01-28 11:40:34,578 - app.main - INFO - shutdown_event:43 - Shutting down Employee Management System
+2026-01-28 11:40:40,102 - app.main - INFO - startup_event:44 - Starting Employee Management System v1.0.0
