@@ -6,11 +6,53 @@ from app.db.base import Base
 from app.db.session import engine
 from app.middleware.logging_middleware import logging_middleware
 from app.utils.logger import get_logger
+from app.crud.user import role_crud, permission_crud
+from sqlalchemy.orm import Session
 
 logger = get_logger(__name__)
 
 # Create tables
 Base.metadata.create_all(bind=engine)
+
+# Initialize default roles and permissions
+def init_db():
+    """Initialize database with default roles and permissions"""
+    from app.db.session import SessionLocal
+    db = SessionLocal()
+    try:
+        # Create default permissions
+        permissions_data = [
+            ("view_employees", "View employees", "employee"),
+            ("create_employee", "Create employee", "employee"),
+            ("edit_employee", "Edit employee", "employee"),
+            ("delete_employee", "Delete employee", "employee"),
+            ("view_reports", "View reports", "report"),
+            ("manage_users", "Manage users", "user"),
+            ("manage_roles", "Manage roles", "user"),
+        ]
+        
+        for perm_name, perm_desc, perm_cat in permissions_data:
+            if not permission_crud.get_permission_by_name(db, perm_name):
+                permission_crud.create_permission(db, perm_name, perm_desc, perm_cat)
+        
+        # Create default roles
+        roles_data = [
+            ("admin", "Administrator with full access"),
+            ("manager", "Manager with limited admin access"),
+            ("employee", "Regular employee"),
+            ("viewer", "Read-only access"),
+        ]
+        
+        for role_name, role_desc in roles_data:
+            if not role_crud.get_role_by_name(db, role_name):
+                role_crud.create_role(db, role_name, role_desc)
+        
+        logger.info("Database initialized with default roles and permissions")
+    finally:
+        db.close()
+
+# Initialize database
+init_db()
 
 # Initialize FastAPI app
 app = FastAPI(
